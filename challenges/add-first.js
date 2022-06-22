@@ -1,21 +1,36 @@
 // [orange,red,blue,green]
 const addOrange = addFirst("orange");
+// const test = addOrange(["red", "blue", "green"]);
+console.log(addOrange(["red", "blue", "green"]));
 
 console.log(addOrange(["blue", "blue", "blue"]));
 // [orange,blue,blue,blue]
-const callback = [];
-function addOrange(arr, addOrange) {
+// function newfucnt(arr, callback) {
+//   let newarr = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     const item = callback(arr[i]);
+//     // if (callback(item)) {
+//     newarr = [...newarr, item];
+//     // }
+//   }
+//   console.log(newarr);
+//   return newarr;
+// }
+
+//proper way to do it
+
+function map(arr, callback) {
+  const newArray = [];
+
   for (let i = 0; i < arr.length; i++) {
     const item = arr[i];
-    addFirst(item);
+    const modifiedItem = callback(item);
+    newArray[newArray.length] = modifiedItem;
   }
+  return newArray;
 }
-// const addOrange = addFirst("orange");
-// const test = addOrange(["red", "blue", "green"]);
-console.log(addOrange(["red", "blue", "green"]));
-addFirst(assets, (obj) => (obj.value *= 6));
-console.log(assets);
 
-// function map(arr, callback) {}
-// const myArray =
+const myArray = [1, 2, 3, 4];
+const newArray = map(myArray, (num) => num * 2);
+
 // node challenges/add-first.js
