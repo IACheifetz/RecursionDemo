@@ -1,4 +1,4 @@
-// [orange,red,blue,green]
+// node challenges/add-first.js
 const addOrange = addFirst("orange");
 // const test = addOrange(["red", "blue", "green"]);
 console.log(addOrange(["red", "blue", "green"]));
@@ -17,7 +17,7 @@ console.log(addOrange(["blue", "blue", "blue"]));
 //   return newarr;
 // }
 
-//proper way to do it
+//proper way to do a map
 
 function map(arr, callback) {
   const newArray = [];
@@ -33,4 +33,16 @@ function map(arr, callback) {
 const myArray = [1, 2, 3, 4];
 const newArray = map(myArray, (num) => num * 2);
 
-// node challenges/add-first.js
+//proper filter method
+function filter(arr, callback) {
+  const filteredArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    const item = arr[i];
+    if (callback(item)) {
+      filteredArr[filteredArr.length] = item;
+    }
+    return filteredArr;
+  }
+  return filteredArr;
+}
+console.log(filter(myArray, (x) => x <= 2));
