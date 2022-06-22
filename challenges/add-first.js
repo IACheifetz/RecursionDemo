@@ -1,9 +1,9 @@
 // node challenges/add-first.js
-const addOrange = addFirst("orange");
+// const addOrange = addFirst("orange");
 // const test = addOrange(["red", "blue", "green"]);
-console.log(addOrange(["red", "blue", "green"]));
+// console.log(addOrange(["red", "blue", "green"]));
 
-console.log(addOrange(["blue", "blue", "blue"]));
+// console.log(addOrange(["blue", "blue", "blue"]));
 // [orange,blue,blue,blue]
 // function newfucnt(arr, callback) {
 //   let newarr = [];
@@ -46,3 +46,14 @@ function filter(arr, callback) {
   return filteredArr;
 }
 console.log(filter(myArray, (x) => x <= 2));
+
+//proper add method
+function addX(num) {
+  //must return a function
+  return (x) => {
+    return num + x;
+  };
+}
+
+const add5 = addX(5);
+console.log(add5(10));
