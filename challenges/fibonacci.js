@@ -19,8 +19,12 @@ function fibo(n) {
 }
 
 console.log(fibo(fib(8)));
-// proper way to fibonacci
+
+// proper way to fibonacci (with speed boost aka memo)
+let memo = { 0: 0, 1: 1 };
 function fib(num) {
   if (num <= 1) return num;
+  else if (memo[num]) return memo[num];
   return fib(num - 1) + fib(num - 2);
 }
+console.log(fib(8));
