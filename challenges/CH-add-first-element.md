@@ -1,5 +1,4 @@
-DEMO: Add First Element
----
+## DEMO: Add First Element
 
 ## Challenge
 
@@ -10,16 +9,25 @@ Write a function `addFirst` that takes a parameter `element` and returns a funct
 ## Test Cases
 
 ```js
-const addOrange = addFirst('orange');
-console.log(addOrange(['red', 'blue', 'green']));
+const addOrange = addFirst("orange");
+console.log(addOrange(["red", "blue", "green"]));
+
 // [orange,red,blue,green]
-console.log(addOrange(['blue', 'blue', 'blue']));
+console.log(addOrange(["blue", "blue", "blue"]));
 // [orange,blue,blue,blue]
 
-const addCat = addFirst('cat');
-console.log(addOrange(['dog', 'bird', 'lizard']));
-// [cat,dog,bird,lizard]
-console.log(addOrange(['lizard', 'donkey', 'whale']));
-// [cat,lizard,donkey,whale]
+function forEach(arr, callback) {
+  const newarr = [];
+  for (let i = 0; i < arr.length; i++) {
+    const item = arr[i];
+    console.log("test", item);
+    callback(item);
+  }
+}
 
+const addCat = addFirst("cat");
+console.log(addOrange(["dog", "bird", "lizard"]));
+// [cat,dog,bird,lizard]
+console.log(addOrange(["lizard", "donkey", "whale"]));
+// [cat,lizard,donkey,whale]
 ```
